@@ -3,30 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SCHUZTER | Premium Footwear</title>
+    <title>SCHUZTER</title>
+    
+    <link rel="icon" type="image/png" href="logo.png">
+
     <style>
         :root {
             --brand-color: #0d383e; 
         }
 
         body {
-            background-color: #f2f2f2; 
+            background-color: var(--brand-color); 
             font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px 0;
+            padding: 40px 0;
         }
 
         .main-card {
             background-color: #ffffff;
-            width: 100%;
+            width: 90%;
             max-width: 450px;
             padding: 40px 20px;
             border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3); 
             text-align: center;
         }
 
@@ -34,12 +37,9 @@
             width: 100px;
             height: 100px;
             margin: 0 auto 20px;
-            border: 2px solid var(--brand-color); 
-            padding: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 10px;
         }
 
         .logo-box img {
@@ -84,27 +84,27 @@
             color: var(--brand-color); 
         }
 
-        .btn-container {
+        /* Updated Map Button with Fixed Direct Link */
+        .map-btn-container {
             background-color: var(--brand-color); 
-            padding: 20px;
+            padding: 25px 20px;
             border-radius: 15px;
-            margin: 30px 0;
+            margin: 30px 0 10px;
+            transition: background-color 0.2s, transform 0.2s;
         }
 
-        /* Fixed Map Styles */
-        .map-frame {
-            width: 100%;
-            height: 250px;
-            border: 0;
-            border-radius: 10px;
-            margin-top: 15px;
+        .map-btn-container:hover {
+            background-color: #124d55;
+            transform: translateY(-2px);
         }
 
-        .secondary-link {
-            font-size: 0.85rem;
-            color: var(--brand-color); 
-            text-decoration: underline;
-            font-weight: 600;
+        .map-text-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
         }
 
         footer {
@@ -127,7 +127,7 @@
 
         <span class="label">Address</span>
         <div class="info-text">
-            <a href="https://www.google.com/maps/search/177%2F1,+Gudiyatham+Road,+Periavarikkam+Village,+Ambur+-+635811" target="_blank" class="redirect-link">
+            <a href="https://www.google.com/maps/search/?api=1&query=Schuzter+Ambur" target="_blank" class="redirect-link">
                 177/1, Gudiyatham Road, <br>
                 Periavarikkam Village, <br>
                 Ambur - 635811, TN. India.
@@ -141,17 +141,12 @@
             <a href="tel:+919952543475" class="redirect-link">+91 99525 43475 (Mobile)</a>
         </div>
 
-        <div class="btn-container">
-            <span class="label" style="color: #fff; opacity: 0.8;">Factory Location</span>
-            <iframe 
-                class="map-frame"
-                src="https://maps.google.com/maps?q=177/1%2C%20Gudiyatham%20Road%2C%20Periavarikkam%20Village%2C%20Ambur%20-%20635811&t=&z=13&ie=UTF8&iwloc=&output=embed" 
-                allowfullscreen="" 
-                loading="lazy">
-            </iframe>
-        </div>
-
-        <a href="https://www.google.com/maps/search/177%2F1,+Gudiyatham+Road,+Periavarikkam+Village,+Ambur+-+635811" target="_blank" class="secondary-link">View Full Map</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Schuzter+Ambur" target="_blank" style="text-decoration: none;">
+            <div class="map-btn-container">
+                <span class="label" style="color: rgba(255,255,255,0.7); margin-bottom: 5px;">Factory Location</span>
+                <div class="map-text-link">Open in Google Maps</div>
+            </div>
+        </a>
 
         <footer>
             Est. 2021 | Schuzter
