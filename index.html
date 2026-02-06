@@ -27,16 +27,17 @@
             background-color: #ffffff;
             width: 90%;
             max-width: 450px;
-            padding: 40px 20px;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3); 
+            padding: 50px 25px;
+            border-radius: 25px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.4); 
             text-align: center;
         }
 
+        /* --- Enlarge Logo Section --- */
         .logo-box {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 20px;
+            width: 140px; /* Increased from 100px */
+            height: 140px; /* Increased from 100px */
+            margin: 0 auto 25px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -48,12 +49,12 @@
         }
 
         h1 {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: 800;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             color: #000;
             text-transform: uppercase;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
         .label {
@@ -66,11 +67,11 @@
         }
 
         .info-text {
-            font-size: 0.95rem;
+            font-size: 1rem;
             font-weight: 600;
             color: #333;
-            margin-bottom: 25px;
-            line-height: 1.4;
+            margin-bottom: 30px;
+            line-height: 1.5;
         }
 
         .redirect-link {
@@ -84,23 +85,37 @@
             color: var(--brand-color); 
         }
 
-        /* Updated Map Button with Fixed Direct Link */
+        /* --- GSTIN Style --- */
+        .gst-box {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 30px;
+            border: 1px solid #eee;
+        }
+
+        .gst-number {
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 700;
+            color: #444;
+            letter-spacing: 1px;
+        }
+
         .map-btn-container {
             background-color: var(--brand-color); 
             padding: 25px 20px;
             border-radius: 15px;
-            margin: 30px 0 10px;
-            transition: background-color 0.2s, transform 0.2s;
+            margin: 10px 0;
+            transition: transform 0.2s, background-color 0.2s;
         }
 
         .map-btn-container:hover {
             background-color: #124d55;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
 
         .map-text-link {
             color: #ffffff;
-            text-decoration: none;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -108,11 +123,11 @@
         }
 
         footer {
-            margin-top: 30px;
-            font-size: 0.7rem;
+            margin-top: 40px;
+            font-size: 0.75rem;
             color: #bbb;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
         }
     </style>
 </head>
@@ -141,9 +156,14 @@
             <a href="tel:+919952543475" class="redirect-link">+91 99525 43475 (Mobile)</a>
         </div>
 
+        <div class="gst-box">
+            <span class="label">GSTIN</span>
+            <span class="gst-number">33AEIFS7900R1ZF</span>
+        </div>
+
         <a href="https://www.google.com/maps/search/?api=1&query=Schuzter+Ambur" target="_blank" style="text-decoration: none;">
             <div class="map-btn-container">
-                <span class="label" style="color: rgba(255,255,255,0.7); margin-bottom: 5px;">Factory Location</span>
+                <span class="label" style="color: rgba(255,255,255,0.7); margin-bottom: 5px;">Location Details</span>
                 <div class="map-text-link">Open in Google Maps</div>
             </div>
         </a>
