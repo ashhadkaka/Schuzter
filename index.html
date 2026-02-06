@@ -33,10 +33,9 @@
             text-align: center;
         }
 
-        /* --- Enlarge Logo Section --- */
         .logo-box {
-            width: 120px; /* Increased from 100px */
-            height: 120px; /* Increased from 100px */
+            width: 120px; 
+            height: 120px; 
             margin: 0 auto 25px;
             display: flex;
             align-items: center;
@@ -85,13 +84,21 @@
             color: var(--brand-color); 
         }
 
-        /* --- GSTIN Style --- */
+        /* --- GSTIN Style with Copy Button --- */
         .gst-box {
             background-color: #f8f9fa;
-            border-radius: 10px;
+            border-radius: 12px;
             padding: 15px;
             margin-bottom: 30px;
             border: 1px solid #eee;
+        }
+
+        .gst-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 5px;
         }
 
         .gst-number {
@@ -99,6 +106,24 @@
             font-weight: 700;
             color: #444;
             letter-spacing: 1px;
+            font-size: 1rem;
+        }
+
+        .copy-btn {
+            background-color: var(--brand-color);
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: opacity 0.2s;
+        }
+
+        .copy-btn:active {
+            transform: scale(0.95);
         }
 
         .map-btn-container {
@@ -142,7 +167,7 @@
 
         <span class="label">Address</span>
         <div class="info-text">
-            <a href="https://www.google.com/maps/search/?api=1&query=Schuzter+Ambur" target="_blank" class="redirect-link">
+            <a href="https://www.google.com/maps/search/Schuzter+Ambur" target="_blank" class="redirect-link">
                 177/1, Gudiyatham Road, <br>
                 Periavarikkam Village, <br>
                 Ambur - 635811, TN. India.
@@ -158,10 +183,13 @@
 
         <div class="gst-box">
             <span class="label">GSTIN</span>
-            <span class="gst-number">33AEIFS7900R1ZF</span>
+            <div class="gst-row">
+                <span class="gst-number" id="gstValue">33AEIFS7900R1ZF</span>
+                <button class="copy-btn" id="copyButton" onclick="copyGST()">Copy</button>
+            </div>
         </div>
 
-        <a href="https://www.google.com/maps/search/?api=1&query=Schuzter+Ambur" target="_blank" style="text-decoration: none;">
+        <a href="https://www.google.com/maps/search/Schuzter+Ambur" target="_blank" style="text-decoration: none;">
             <div class="map-btn-container">
                 <span class="label" style="color: rgba(255,255,255,0.7); margin-bottom: 5px;">Location Details</span>
                 <div class="map-text-link">Open in Google Maps</div>
@@ -172,6 +200,23 @@
             Est. 2021 | Schuzter
         </footer>
     </div>
+
+    <script>
+        function copyGST() {
+            const gstText = document.getElementById('gstValue').innerText;
+            const btn = document.getElementById('copyButton');
+            
+            navigator.clipboard.writeText(gstText).then(() => {
+                btn.innerText = "Copied!";
+                btn.style.backgroundColor = "#28a745"; // Green success color
+                
+                setTimeout(() => {
+                    btn.innerText = "Copy";
+                    btn.style.backgroundColor = ""; // Reset to brand color
+                }, 2000);
+            });
+        }
+    </script>
 
 </body>
 </html>
